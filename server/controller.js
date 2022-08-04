@@ -12,8 +12,8 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     }
 })
 
-// let dinners = ['tacos', 'pizza', 'burgers', 'sandwiches', 'chicken', 'pasta', 'fish', 'breakfast'];
-let userDB = []
+let dinners = [];
+let userDB = dinners
 let list = []
 
 module.exports = {
@@ -125,14 +125,14 @@ let { name:s } = h
 
 console.log(z)
 
-userDB.push(s, t, u, v, w, x, y, z)
+dinners.push(s, t, u, v, w, x, y, z)
 
 
                 
                 
                     // userDB.push(...dbRes[0])
-                    const set = new Set(userDB);
-                    userDB = [...set]
+                    const set = new Set(dinners);
+                    dinners = [...set]
                 
                     res.status(200).send(userDB)
                 
