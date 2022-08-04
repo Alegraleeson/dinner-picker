@@ -1,0 +1,56 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+
+.flex-container {
+    background-image: url("./images/shayda-torabi-3iexvMShGfQ-unsplash.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    /* max-width: 390px; */
+    flex-wrap: wrap;
+}
+
+h1 {
+    background-color: #E4DB04;
+    opacity: 57%;
+    text-align: center;
+    font-size: 36px;
+    font-family: Jacques Francois;
+}
+
+button {
+    background-color: #F51212;
+    width: 216px;
+    height: 56px;
+    font-size: 24px;
+    font-family: Jacques Francois;
+    margin: 25px 15px 25px 15px;
+
+}
+
+.text {
+    background-color: #FF7121;
+    opacity: 90%;
+    /* color: #E4DB04; */
+    font-family: Jacques Francois;
+    font-size: 24px;
+    text-align: center;
+    
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.save, .delete {
+    width: 75px;
+    height: 35px;
+    font-size: 16px;
+    margin-left: 10px;
+
+}
