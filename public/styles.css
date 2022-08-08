@@ -1,9 +1,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
 
+body {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.left {
+  background-image: url("./images/shayda-torabi-3iexvMShGfQ-unsplash.jpg");
+  background-color: #F51212;
+  background-size: cover;
+}
+
 
 .flex-container {
-    background-image: url("./images/shayda-torabi-3iexvMShGfQ-unsplash.jpg");
+    background-color: #F51212;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,42 +23,58 @@
     flex-wrap: wrap;
 }
 
-h1 {
+#header {
     background-color: #E4DB04;
-    opacity: 57%;
+    /* opacity: 57%; */
+    color: black;
     text-align: center;
     font-size: 36px;
     font-family: Jacques Francois;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+#sub-head {
+  color: white;
+  margin-top: 5px;
+
 }
 
 button {
-    background-color: #F51212;
+    background-color: #E4DB04;
     width: 216px;
     height: 56px;
     font-size: 24px;
     font-family: Jacques Francois;
     margin: 25px 15px 25px 15px;
+    box-shadow: 5px 5px;
+    /* border-radius: 25%; */
 
 }
 
 .text {
-    background-color: #FF7121;
-    opacity: 90%;
-    /* color: #E4DB04; */
+    /* background-color: #FF7121; */
+    /* opacity: 90%; */
+    color: white;
     font-family: Jacques Francois;
     font-size: 24px;
     text-align: center;
+    /* border-radius: 30%; */
+    display: inline;
     
 }
 
+
+
 form {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 
-.save, .delete {
+.save {
     width: 75px;
     height: 35px;
     font-size: 16px;
@@ -55,12 +82,37 @@ form {
 
 }
 
-div {
+.delete {
+  background-color: #E4DB04;
+  display: inline;
+  font-size: 24px;
+  margin-left: 10px;
+  border-left: #E4DB04 10px solid;
+  border-right: #E4DB04 10px solid;
+  box-shadow: 5px 5px;
+}
+
+.disp {
+  display: flex;
+}
+
+#option-container, #list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
     animation-duration: 3s;
     animation-name: slidein;
   }
+
+  #addOpt {
+    box-shadow: 2px 2px 2px lightgray inset;
+    height: 25px;
+
+  }
   
-  @keyframes slidein {
+  /* @keyframes slidein {
     from {
       margin-left: 100%;
       width: 300%;
@@ -70,7 +122,7 @@ div {
       margin-left: 0%;
       width: 100%;
     }
-  }
+  } */
 
   #option-container {
     overflow: hidden;

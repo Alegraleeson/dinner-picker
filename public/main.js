@@ -13,6 +13,8 @@ const option = document.getElementById("tonight")
 const listBtn = document.getElementById("listBtn")
 // const { userDB } = require('../server/controller')
 
+form.style.display = "none";
+
 const getOption = () => {
     axios.get("http://localhost:4000/api/option/")
         .then(res => {
@@ -27,10 +29,11 @@ pickBtn.addEventListener('click', getOption)
 
 
 const createDisplay = (list) => {
-    let newList = list.map((x,i) => `<p id='${i}' class = 'text'>${x}</p> <button class="save" onclick="deleteOption(${i})">Delete</button>`)
+    let newList = list.map((x,i) => `<div class="disp"><p id='${i}' class = 'text'>${x}</p> <p class="delete" onclick="deleteOption(${i})">Delete</p></div>`)
     console.log(newList)
     optionContainer.innerHTML = ""
     optionContainer.innerHTML = newList.join('')
+    
 }
 
 const displayOption = (food) => {
@@ -40,7 +43,7 @@ const displayOption = (food) => {
 }
 
 const createDisplay2 = (list) => {
-    let newList = list.map((x,i) => `<p id='${i}' class = 'text'>${x}</p> <button class="delete" onclick="deleteListItem(${i})">Delete</button>`)
+    let newList = list.map((x,i) => `<div class="disp"><p id='${i}' class = 'text'>${x}</p> <p class="delete" onclick="deleteListItem(${i})">Delete</p></div>`)
     console.log(newList)
     listContainer.innerHTML = ""
     listContainer.innerHTML = newList.join('')
@@ -90,10 +93,12 @@ const getAllOptions = () => {
             let data = res.data;
             if (optionsBtn.className == "show") {
                 createDisplay(data)
+                form.style.display = "block";
                 optionsBtn.className = "";
             } else {
                 optionContainer.innerHTML = ""
                 optionsBtn.className = "show";
+                form.style.display = "none";
             }
 
         
