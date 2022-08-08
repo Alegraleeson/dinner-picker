@@ -151,7 +151,6 @@ const getDesc = () => {
         desc.style.display = "block";
         aboutBtn.className = "";
     } else {
-        desc.innerHTML = ""
         aboutBtn.className = "show";
         desc.style.display = "none";
     }

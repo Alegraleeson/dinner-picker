@@ -26,7 +26,6 @@ body {
 #logo {
   height: 100px;
   width: 100px;
-  margin-top: 25px;
 }
 
 #header {
@@ -72,6 +71,20 @@ button {
 
 #about {
   margin: 30px 30px 30px 30px;
+}
+
+#topper {
+  width: 100%;
+}
+
+#aboutBtn {
+  color: white;
+    font-family: Jacques Francois;
+    font-size: 24px;
+    text-align: right;
+    display: block;
+    margin: 15px 25px 10px;
+
 }
 
 
