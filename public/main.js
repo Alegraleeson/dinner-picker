@@ -11,6 +11,8 @@ const addBtn = document.querySelector('#addBtn')
 // const saveBtn = document.querySelector(".save")
 const option = document.getElementById("tonight")
 const listBtn = document.getElementById("listBtn")
+const aboutBtn = document.getElementById("aboutBtn")
+const desc = document.getElementById("about")
 // const { userDB } = require('../server/controller')
 
 form.style.display = "none";
@@ -144,7 +146,22 @@ const getDinners = () => {
     
 };
 
+const getDesc = () => {
+    if (aboutBtn.className == "show") {
+        desc.style.display = "block";
+        aboutBtn.className = "";
+    } else {
+        desc.innerHTML = ""
+        aboutBtn.className = "show";
+        desc.style.display = "none";
+    }
+
+}
+
+aboutBtn.addEventListener('click', getDesc)
+
 
 
 
 getDinners()
+desc.style.display = "none";

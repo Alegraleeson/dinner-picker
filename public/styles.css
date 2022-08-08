@@ -23,6 +23,12 @@ body {
     flex-wrap: wrap;
 }
 
+#logo {
+  height: 100px;
+  width: 100px;
+  margin-top: 25px;
+}
+
 #header {
     background-color: #E4DB04;
     /* opacity: 57%; */
@@ -30,7 +36,7 @@ body {
     text-align: center;
     font-size: 36px;
     font-family: Jacques Francois;
-    margin-top: 25px;
+    margin-top: 10px;
     margin-bottom: 5px;
 }
 
@@ -52,7 +58,7 @@ button {
 
 }
 
-.text {
+.text, #about  {
     /* background-color: #FF7121; */
     /* opacity: 90%; */
     color: white;
@@ -64,6 +70,9 @@ button {
     
 }
 
+#about {
+  margin: 30px 30px 30px 30px;
+}
 
 
 form {
@@ -89,6 +98,8 @@ form {
   margin-left: 10px;
   border-left: #E4DB04 10px solid;
   border-right: #E4DB04 10px solid;
+  border-top: #E4DB04 5px solid;
+  border-bottom: #E4DB04 3px solid;
   box-shadow: 5px 5px;
 }
 
