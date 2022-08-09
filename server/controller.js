@@ -78,10 +78,11 @@ module.exports = {
 
     addOption: (req, res) => {
         // console.log(dinners)
-        console.log(req.body.userValue)
+        // console.log(req.body.userValue)
         const {id} = req.body.userValue;
         userDB.push(req.body.userValue);
-        res.status(200).send(userDB);
+        // console.log(userDB[userDB.length-1]);
+        res.status(200).send(userDB[userDB.length-1]);
 
     },
 

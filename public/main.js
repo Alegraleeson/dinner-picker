@@ -18,7 +18,7 @@ const desc = document.getElementById("about")
 form.style.display = "none";
 
 const getOption = () => {
-    axios.get("/api/option/")
+    axios.get("http://localhost:4000/api/option/")
         .then(res => {
             const data = res.data;
             // console.log(data);
@@ -38,6 +38,25 @@ const createDisplay = (list) => {
     
 }
 
+const addDisplay = (item) => {
+    // let newItem = `<div class="disp"><p id='${item}' class = 'text'>${item}</p> <p class="delete" onclick="deleteOption(${item})">Delete</p></div>`
+    let newItem = document.createElement('p');
+            let itemDiv = document.createElement('div');
+            newItem.textContent = item;
+           
+            let deleteBTN = document.createElement('p');
+            deleteBTN.textContent = 'Delete';
+            itemDiv.classList.add('disp')
+            newItem.classList.add('text')
+
+            deleteBTN.classList.add('delete')
+            deleteBTN.addEventListener('click', deleteOption)
+            itemDiv.appendChild(newItem);
+            itemDiv.appendChild(deleteBTN);
+            optionContainer.appendChild(itemDiv);
+    // optionContainer.innerHTML = newItem
+}
+
 const displayOption = (food) => {
     let display =  `<span id='food' class = 'text'>${food}</span> <button class="save" onclick="saveOption(food.innerHTML)">Save</button>`
     option.innerHTML = ""
@@ -49,15 +68,27 @@ const createDisplay2 = (list) => {
     console.log(newList)
     listContainer.innerHTML = ""
     listContainer.innerHTML = newList.join('')
+
+    
+    
 }
 
-const addOption = () => {
+const addOption = (e) => {
+    e.preventDefault()
     const userValue = userInput.value;
+    
     // console.log(userValue);
-    axios.post("/api/option/", {userValue})
-    .then
-        alert('New option added!')
-        createDisplay(data)
+    axios.post("http://localhost:4000/api/option/", {userValue})
+    .then(res => {
+        
+        const data = res.data;
+        addDisplay(data);
+        alert(`${data} added!`)
+        
+        
+
+    })
+        
 
 }
 
@@ -66,7 +97,7 @@ addBtn.addEventListener('click', addOption)
 
 
 const deleteOption = id => {
-    axios.delete(`/api/option/${id}`)
+    axios.delete(`http://localhost:4000/api/option/${id}`)
     .then (res => {
         alert('Option deleted!');
         createDisplay(res.data)
@@ -76,7 +107,7 @@ const deleteOption = id => {
 // deleteBTN.addEventListener('click', deleteFortune)
 
 const saveOption = id => {
-    axios.put(`/api/option/${id}`)
+    axios.put(`http://localhost:4000/api/option/${id}`)
         .then(res => {
             // createDisplay(res.data)
             // console.log(res.data)
@@ -90,7 +121,7 @@ const saveOption = id => {
 
 
 const getAllOptions = () => {
-    axios.get("/api/options/")
+    axios.get("http://localhost:4000/api/options/")
         .then(res => {
             let data = res.data;
             if (optionsBtn.className == "show") {
@@ -110,12 +141,15 @@ const getAllOptions = () => {
 optionsBtn.addEventListener('click', getAllOptions)
 
 const getList = () => {
-    axios.get("/api/list/")
+    axios.get("http://localhost:4000/api/list/")
         .then(res => {
             let data = res.data;
             if (listBtn.className == "show") {
                 createDisplay2(data)
                 listBtn.className = "";
+                if(listContainer.innerHTML === ""){
+                    listContainer.innerHTML = "No items have been saved yet!"
+                }
             } else {
                 listContainer.innerHTML = ""
                 listBtn.className = "show";
@@ -127,7 +161,7 @@ const getList = () => {
 listBtn.addEventListener('click', getList)
 
 const deleteListItem = id => {
-    axios.delete(`/api/list/${id}`)
+    axios.delete(`http://localhost:4000/api/list/${id}`)
     .then (res => {
         alert('Item deleted!');
         createDisplay2(res.data)
@@ -135,7 +169,7 @@ const deleteListItem = id => {
 }
 
 const getDinners = () => {
-    axios.get("/api/dinners/")
+    axios.get("http://localhost:4000/api/dinners/")
         .then(res => {
             const data = res;
             // userDB.push(...data)
