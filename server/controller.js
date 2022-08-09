@@ -13,8 +13,8 @@ const sequelize = new Sequelize(DATABASE_URL, {
 })
 
 let dinners = [];
-let userDB = dinners
-let list = []
+let userDB = [];
+let list = [];
 
 module.exports = {
 
@@ -133,7 +133,8 @@ dinners.push(s, t, u, v, w, x, y, z)
                 
                     // userDB.push(...dbRes[0])
                     const set = new Set(dinners);
-                    dinners = [...set]
+                    userDB = [...set]
+                    
                 
                     res.status(200).send(userDB)
                 
