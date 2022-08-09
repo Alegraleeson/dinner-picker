@@ -133,8 +133,8 @@ dinners.push(s, t, u, v, w, x, y, z)
                 
                     // userDB.push(...dbRes[0])
                     const set = new Set(dinners);
-                    userDB = [...set]
-                    
+                    userDB = [...set];
+                    list = []
                 
                     res.status(200).send(userDB)
                 
