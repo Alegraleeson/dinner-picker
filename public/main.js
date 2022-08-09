@@ -18,7 +18,7 @@ const desc = document.getElementById("about")
 form.style.display = "none";
 
 const getOption = () => {
-    axios.get("http://localhost:4000/api/option/")
+    axios.get("/api/option/")
         .then(res => {
             const data = res.data;
             // console.log(data);
@@ -78,7 +78,7 @@ const addOption = (e) => {
     const userValue = userInput.value;
     
     // console.log(userValue);
-    axios.post("http://localhost:4000/api/option/", {userValue})
+    axios.post("/api/option/", {userValue})
     .then(res => {
         
         const data = res.data;
@@ -97,7 +97,7 @@ addBtn.addEventListener('click', addOption)
 
 
 const deleteOption = id => {
-    axios.delete(`http://localhost:4000/api/option/${id}`)
+    axios.delete(`/api/option/${id}`)
     .then (res => {
         alert('Option deleted!');
         createDisplay(res.data)
@@ -107,7 +107,7 @@ const deleteOption = id => {
 // deleteBTN.addEventListener('click', deleteFortune)
 
 const saveOption = id => {
-    axios.put(`http://localhost:4000/api/option/${id}`)
+    axios.put(`/api/option/${id}`)
         .then(res => {
             // createDisplay(res.data)
             // console.log(res.data)
@@ -121,7 +121,7 @@ const saveOption = id => {
 
 
 const getAllOptions = () => {
-    axios.get("http://localhost:4000/api/options/")
+    axios.get("/api/options/")
         .then(res => {
             let data = res.data;
             if (optionsBtn.className == "show") {
@@ -141,7 +141,7 @@ const getAllOptions = () => {
 optionsBtn.addEventListener('click', getAllOptions)
 
 const getList = () => {
-    axios.get("http://localhost:4000/api/list/")
+    axios.get("/api/list/")
         .then(res => {
             let data = res.data;
             if (listBtn.className == "show") {
@@ -161,7 +161,7 @@ const getList = () => {
 listBtn.addEventListener('click', getList)
 
 const deleteListItem = id => {
-    axios.delete(`http://localhost:4000/api/list/${id}`)
+    axios.delete(`/api/list/${id}`)
     .then (res => {
         alert('Item deleted!');
         createDisplay2(res.data)
@@ -169,7 +169,7 @@ const deleteListItem = id => {
 }
 
 const getDinners = () => {
-    axios.get("http://localhost:4000/api/dinners/")
+    axios.get("/api/dinners/")
         .then(res => {
             const data = res;
             // userDB.push(...data)
