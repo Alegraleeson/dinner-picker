@@ -98,6 +98,7 @@ body {
   color: white;
   opacity: 100%;
   margin-top: 5px;
+  margin-bottom: 25px;
 
 }
 
@@ -128,6 +129,11 @@ button {
 
 #about {
   margin: 30px 30px 30px 30px;
+}
+
+.desc {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #topper {
