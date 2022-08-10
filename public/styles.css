@@ -1,40 +1,91 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+html {
+  height: 100%;
+}
 
 body {
   display: grid;
   grid-template-columns: 50% 50%;
   height: 100%;
-  /* background-color: #F51212; */
-  /* opacity: 75%; */
+  background-color: rgba(245, 18, 18, .75);
+  
 }
 
 .left {
   background-image: url("./images/shayda-torabi-3iexvMShGfQ-unsplash.jpg");
-  background-color: #F51212;
   background-size: cover;
+  height: 100%;
 }
 
 
 .flex-container {
-    background-color: #F51212;
-    opacity: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-size: cover;
-    /* max-width: 390px; */
+    height: 100%;
     flex-wrap: wrap;
 }
 
 #logo {
+  opacity: 100%;
   height: 100px;
   width: 100px;
 }
 
 #header {
     background-color: #E4DB04;
-    /* opacity: 57%; */
+    opacity: 100%;
     color: black;
     text-align: center;
     font-size: 36px;
@@ -45,12 +96,14 @@ body {
 
 #sub-head {
   color: white;
+  opacity: 100%;
   margin-top: 5px;
 
 }
 
 button {
     background-color: #E4DB04;
+    opacity: 100%;
     color: black;
     width: 216px;
     height: 56px;
@@ -58,19 +111,18 @@ button {
     font-family: Jacques Francois;
     margin: 25px 15px 25px 15px;
     box-shadow: 5px 5px black;
-    /* border-radius: 25%; */
-
+    
 }
 
 .text, #about, #list-container  {
-    /* background-color: #FF7121; */
-    /* opacity: 90%; */
+    opacity: 100%;
     color: white;
     font-family: Jacques Francois;
     font-size: 24px;
     text-align: center;
-    /* border-radius: 30%; */
     display: inline;
+    margin-top: 10px;
+    
     
 }
 
@@ -90,7 +142,7 @@ button {
     font-size: 24px;
     text-align: right;
     display: block;
-    margin: 15px 25px 10px;
+    margin: 25px 40px 10px;
 
 }
 
@@ -98,7 +150,6 @@ button {
 form {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -116,6 +167,8 @@ form {
   display: inline;
   color: black;
   font-size: 24px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   margin-left: 10px;
   border-left: #E4DB04 10px solid;
   border-right: #E4DB04 10px solid;
@@ -144,18 +197,6 @@ form {
     height: 25px;
 
   }
-  
-  /* @keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%;
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  } */
 
   #option-container {
     overflow: hidden;
@@ -178,11 +219,18 @@ form {
     }
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 900px) {
     body {
       grid-template-columns: 0% 100%;
       height: 100%;
 
+    }
+
+   #addBtn {
+      width: 100px;
+    height: 35px;
+    font-size: 15px;
+    box-shadow: 2px 2px black;
     }
     
   }
