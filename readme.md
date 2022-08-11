@@ -2,7 +2,9 @@ What Are We Having For Dinner?  This is the question that terrorizes adults arou
 
 Links:
 The app: https://bp3demo.herokuapp.com/index.html
+
 video demo: https://www.youtube.com/watch?v=BsKYoDPo_6M
+
 My portfolio: https://alegraleeson.github.io
 
 
