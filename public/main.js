@@ -8,12 +8,11 @@ const listContainer = document.querySelector('#list-container')
 const form = document.querySelector('form')
 const userInput = document.querySelector('#addOpt')
 const addBtn = document.querySelector('#addBtn')
-// const saveBtn = document.querySelector(".save")
 const option = document.getElementById("tonight")
 const listBtn = document.getElementById("listBtn")
 const aboutBtn = document.getElementById("aboutBtn")
 const desc = document.getElementById("about")
-// const { userDB } = require('../server/controller')
+
 
 form.style.display = "none";
 
